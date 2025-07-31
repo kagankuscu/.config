@@ -1,6 +1,0 @@
-#!/bin/bash
-
-copyPath=/home/keigeon/.config/zed
-
-cp $copyPath/keymap.json ~/Dev/Projects/TextEditor-Keymap/zed
-cp $copyPath/settings.json ~/Dev/Projects/TextEditor-Keymap/zed

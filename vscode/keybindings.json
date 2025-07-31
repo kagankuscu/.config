@@ -1,6 +1,5 @@
-// Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION
+  // TERMINAL START
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.terminal.focusNext",
@@ -25,15 +24,21 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
-  // FILE TREE
+  {
+    "key": "alt+2",
+    "command": "terminal.focus",
+    "when": "editorFocus || filesExplorerFocus"
+  },
+  // TERMINAL END
+  // FILE TREE START
   {
     "key": "n",
     "command": "explorer.newFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "command": "renameFile",
     "key": "r",
+    "command": "renameFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -46,42 +51,20 @@
     "command": "deleteFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
-
-  // EXTRA
+  // FILE TREE END
+  // CHANGE MODE START
   {
-    "key": "ctrl+shift+5",
-    "command": "editor.emmet.action.matchTag"
-  },
-  {
-    "key": "ctrl+z",
-    "command": "workbench.action.toggleStatusbarVisibility"
-  },
-  {
-    "key": "ctrl+l ctrl+l",
-    "command": "workbench.action.toggleCenteredLayout"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "alt+l alt+l",
+    "command": "workbench.action.toggleCenteredLayout",
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+t f",
-    "command": "terminal.focus"
+    "key": "alt+z alt+z",
+    "command": "workbench.action.toggleZenMode",
+    "when": "editorFocus || filesExplorerFocus || terminalFocus"
   },
-  {
-    "key": "ctrl+e f",
-    "command": "workbench.action.focusActiveEditorGroup"
-  },
-  {
-    "key": "ctrl+s f",
-    "command": "workbench.action.focusSideBar",
-    "when": "editorFocus || terminal.active"
-  },
+  // CHANGE MODE END
+  // RESIZING EDITOR VIEW START
   {
     "key": "ctrl+shift+,",
     "command": "workbench.action.decreaseViewWidth",
@@ -101,5 +84,22 @@
     "key": "ctrl+.",
     "command": "workbench.action.increaseViewHeight",
     "when": "editorFocus"
-  }
+  },
+  // RESIZING EDITOR VIEW END
+
+  {
+    "key": "ctrl+alt+z",
+    "command": "workbench.action.toggleStatusbarVisibility",
+    "when": "editorFocus || filesExplorerFocus || terminalFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus || terminal.active"
+  },
 ]
