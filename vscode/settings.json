@@ -40,42 +40,19 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         // NAVIGATION
         // switch b/w buffers
-        { "before": ["<S-h>"], "commands": [":bprevious"] },
-        { "before": ["<S-l>"], "commands": [":bnext"] },
-
+        { "before": ["leader", "h"], "commands": [":bprevious"] },
+        { "before": ["leader", "l"], "commands": [":bnext"] },
         // splits
         { "before": ["leader", "v"], "commands": [":vsplit"] },
         { "before": ["leader", "s"], "commands": [":split"] },
-
-        // panes
-        {
-        "before": ["leader", "h"],
-        "commands": ["workbench.action.focusLeftGroup"]
-        },
-        {
-        "before": ["leader", "j"],
-        "commands": ["workbench.action.focusBelowGroup"]
-        },
-        {
-        "before": ["leader", "k"],
-        "commands": ["workbench.action.focusAboveGroup"]
-        },
-        {
-        "before": ["leader", "l"],
-        "commands": ["workbench.action.focusRightGroup"]
-        },
         // NICE TO HAVE
-        { "before": ["leader", "w"], "commands": [":w!"] },
-        { "before": ["leader", "q"], "commands": [":q"] },
-        { "before": ["leader", "x"], "commands": [":x!"] },
+        { "before": ["<Esc>", "<Esc>"], "commands": [":nohlsearch"] },
         { "before": ["leader", "o"], "after": ["o", "<Esc>"] },
         { "before": ["leader", "O"], "after": ["O", "<Esc>"] },
         {
-        "before": ["<leader>", "c", "a"],
-        "commands": ["editor.action.quickFix"]
-        },
-        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        }
     ],
     "vim.visualModeKeyBindings": [
         // Stay in visual mode while indenting

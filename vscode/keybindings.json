@@ -86,7 +86,7 @@
     "when": "editorFocus"
   },
   // RESIZING EDITOR VIEW END
-
+  
   {
     "key": "ctrl+alt+z",
     "command": "workbench.action.toggleStatusbarVisibility",
@@ -102,4 +102,19 @@
     "command": "workbench.action.focusSideBar",
     "when": "editorFocus || terminal.active"
   },
+  {
+    "key": "ctrl+k a",
+    "command": "editor.action.quickFix",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "editor.action.reindentselectedlines",
+    "when": "editorFocus || editorTextFocus"
+  }
 ]
