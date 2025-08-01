@@ -32,10 +32,8 @@
     "vim.hlsearch": true,
     "vim.foldfix": true,
     "vim.insertModeKeyBindings": [
-        { "before": ["j", "j"], "after": ["<Esc>"]}
     ],
     "vim.commandLineModeKeyBindings": [
-        { "before": ["j","j"], "after": ["<C-c>"]}
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         // NAVIGATION
@@ -49,20 +47,10 @@
         { "before": ["<Esc>", "<Esc>"], "commands": [":nohlsearch"] },
         { "before": ["leader", "o"], "after": ["o", "<Esc>"] },
         { "before": ["leader", "O"], "after": ["O", "<Esc>"] },
-        {
-            "before": ["<leader>", "c", "a"],
-            "commands": ["editor.action.quickFix"]
-        }
     ],
     "vim.visualModeKeyBindings": [
-        // Stay in visual mode while indenting
-        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-        { "before": [">"], "commands": ["editor.action.indentLines"] },
-        // Move selected lines while staying in visual mode
-        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
-        // toggle comment selection
-        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
-        { "before": ["leader", "p"], "after": ["\"", "_", "d", "P"]}
+        { "before": ["leader", "p"], "after": ["\"", "_", "d", "P"]},
+        { "before": ["leader", "c", "y"], "after": ["\"", "*", "y"] },
+        { "before": ["leader", "c", "p"], "after": ["\"", "*", "p"] },
     ]
 }
