@@ -89,7 +89,7 @@
   
   {
     "key": "ctrl+alt+z",
-    "command": "workbench.action.toggleStatusbarVisibility",
+    "command": "workbench.action.toggleActivityBarVisibility",
     "when": "editorFocus || filesExplorerFocus || terminalFocus"
   },
   {
