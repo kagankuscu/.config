@@ -1,3 +1,6 @@
+[language-server]
+bash-language-server = { command = "bash-language-server", args = ["start"] }
+
 [language-server.scls]
 command = "simple-completion-language-server"
 
@@ -68,6 +71,36 @@ indent = { tab-width = 4, unit = "    " }
 injection-regex = "sql"
 language-servers = ["scls"]
 
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "py(thon)?"
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "*SConstruct" }, { glob = "*SConscript" }, { glob = "*sconstruct" }]
+shebangs = ["python", "uv"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+comment-token = "#"
+language-servers = ["basedpyright", "ruff", "scls" ]
+auto-format = true
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.basedpyright.config.python.analysis]
+# This enables the "fancy" 2026 features
+inlayHints.variableTypes = true
+inlayHints.functionReturnTypes = true
+typeCheckingMode = "standard"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[grammar]]
+name = "python"
+source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "293fdc02038ee2bf0e2e206711b69c90ac0d413f" }
+
 [[grammar]]
 name = "sql"
 source = { git = "https://github.com/DerekStride/tree-sitter-sql", rev = "b9d109588d5b5ed986c857464830c2f0bef53f18" }
@@ -84,3 +117,72 @@ language-servers = ["scls"]
 name = "markdown"
 language-servers = ["scls"]
 
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "(shell|bash|zsh|sh)"
+file-types = [
+  "sh",
+  "bash",
+  "ash",
+  "dash",
+  "ksh",
+  "mksh",
+  "zsh",
+  "zshenv",
+  "zlogin",
+  "zlogout",
+  "zprofile",
+  "zshrc",
+  "eclass",
+  "ebuild",
+  "bazelrc",
+  "Renviron",
+  "zsh-theme",
+  "cshrc",
+  "tcshrc",
+  "bashrc_Apple_Terminal",
+  "zshrc_Apple_Terminal",
+  { glob = "i3/config" },
+  { glob = "sway/config" },
+  { glob = ".tmux.conf" },
+  { glob = "tmux.conf" },
+  { glob = ".sh_history" },
+  { glob = ".bash_history" },
+  { glob = ".bash_login" },
+  { glob = ".bash_logout" },
+  { glob = ".bash_profile" },
+  { glob = ".bashrc" },
+  { glob = ".profile" },
+  { glob = ".zshenv" },
+  { glob = ".zlogin" },
+  { glob = ".zlogout" },
+  { glob = ".zprofile" },
+  { glob = ".zshrc" },
+  { glob = ".zimrc" },
+  { glob = "APKBUILD" },
+  { glob = ".bash_aliases" },
+  { glob = "bash_completion" },
+  { glob = "bash-completion/completions/*" },
+  { glob = "bash_completion.d/*" },
+  { glob = ".Renviron" },
+  { glob = ".xprofile" },
+  { glob = ".xsession" },
+  { glob = ".xsessionrc" },
+  { glob = ".yashrc" },
+  { glob = ".yash_profile" },
+  { glob = ".hushlogin" },
+  { glob = ".xinitrc" }, # ~/.xinitrc
+  { glob = "xinitrc" }, # /etc/X11/xinit/xinitrc
+  { glob = ".xserverrc" }, # ~/.xserverrc
+  { glob = "xserverrc" }, # /etc/X11/xinit/xserverrc
+  { glob = "direnvrc" }, # ~/.config/direnv/direnvrc
+]
+shebangs = ["sh", "bash", "dash", "zsh"]
+comment-token = "#"
+language-servers = [ "bash-language-server" ]
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "bash"
+source = { git = "https://github.com/tree-sitter/tree-sitter-bash", rev = "487734f87fd87118028a65a4599352fa99c9cde8" }
