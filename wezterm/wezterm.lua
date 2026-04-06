@@ -3,6 +3,9 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+-- for windows powershell
+-- config.default_prog = { 'powershell.exe' }
+
 -- theme and tab settings
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = 'Catppuccin Mocha'
