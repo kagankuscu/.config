@@ -8,7 +8,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = 'Catppuccin Mocha'
 
 -- font settings
-config.font = wezterm.font("JetBrains Mono", {weight="Regular", stretch="Normal", style="Normal"})
+config.font = wezterm.font("JetBrains Mono", {weight="Medium", stretch="Normal", style="Italic"})
 config.font_size = 12.0
 
 
