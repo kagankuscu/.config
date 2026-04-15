@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 
 -- theme and tab settings
 config.hide_tab_bar_if_only_one_tab = true
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Gruvbox dark, hard (base16)'
 
 -- font settings
 config.font = wezterm.font("JetBrains Mono", {weight="Medium", stretch="Normal", style="Italic"})
